@@ -8,7 +8,7 @@ public class MainActivity_ViewBinding {
 
     public MainActivity_ViewBinding(MainActivity target) {
         this.target = target;
-        target.textView = target.findViewById(R.id.tv1);
+//        target.textView = target.findViewById(R.id.tv1);
 
     }
 
@@ -16,7 +16,7 @@ public class MainActivity_ViewBinding {
         MainActivity target = this.target;
         if (target == null) throw new IllegalStateException("Bindings already bleated");
         this.target = null;
-        target.textView = null;
+//        target.textView = null;
     }
 }
 

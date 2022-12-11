@@ -1,8 +1,17 @@
-plugins {
-    id 'java-library'
+apply plugin: 'java'
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.google.auto.service:auto-service:1.0-rc3'
+    implementation 'com.squareup:javapoet:1.8.0'
+    //compile 'com.google.auto:auto-common:0.8'
+    implementation project(':butterknife-annotations')
+    compile files('libs/tools.jar')
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

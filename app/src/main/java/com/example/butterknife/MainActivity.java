@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+import com.butterknife.ButterKnife;
+import com.butterknife.annotations.BindView;
+
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
+//import butterknife.Unbinder;
 
 /**
  * ButterKnife介绍
@@ -23,16 +26,21 @@ public class MainActivity extends AppCompatActivity {
 //    @BindView(R.id.tv2)
 //    TextView tv2;
 //    Unbinder bind;
-    TextView textView;
+    @BindView(R.id.tv2)
+    TextView textView2;
+    @BindView(R.id.tv1)
+    TextView textView1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 //         bind = ButterKnife.bind(this);//绑定布局
 //        探究黄油刀的原理就是使用apt生成代码
-        MainActivity_ViewBinding viewBinding = new MainActivity_ViewBinding(this);
-        textView.setText("adasd");
+//        MainActivity_ViewBinding viewBinding = new MainActivity_ViewBinding(this);
+        textView1.setText("adasd");
     }
 
     @Override
